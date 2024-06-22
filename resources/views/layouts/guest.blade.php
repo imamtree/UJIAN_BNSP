@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/user4.png">
+  <link rel="icon" type="image/png" href="/assets/img/user4.png">
   <title>
     Employees Web by TreeUtomo
   </title>
@@ -68,7 +68,7 @@
     </div>
   </div>
   <main class="main-content mt-0">
-    <div class="page-header align-items-start min-vh-100" style="background-image: url('/assets/img/bg-pricing.jpg');">
+    <div class="page-header align-items-start min-vh-100" style="background-image: url('/assets/img/bg.jpg');">
       <span class="mask bg-gradient-dark opacity-6"></span>
       <div class="container my-auto">
         @yield('content')

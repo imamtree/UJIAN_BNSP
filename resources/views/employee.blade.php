@@ -7,91 +7,88 @@
     <title>Employee Management</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
     <style>
-        /* Custom CSS for table */
-        table.table {
-            background-color: #f8f9fa; /* Light background */
-            color: #343a40; /* Dark text color */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
         }
-        table.table th {
-            background-color: #343a40; /* Dark header background */
-            color: #fff; /* White text color for header */
-        }
-        table.table td {
-            background-color: #fff; /* White cell background */
-            color: #343a40; /* Dark text color for cells */
-        }
-        table.table tr:nth-child(even) td {
-            background-color: #e9ecef; /* Light grey background for even rows */
+        .container {
+            margin-top: 50px;
         }
         .form-section {
-            border: 1px solid #e9ecef;
             padding: 20px;
             border-radius: 5px;
             background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .form-section .btn {
+            font-size: 1rem;
+        }
+        .table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .table td, .table th {
+            vertical-align: middle;
         }
     </style>
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1>Employee Management</h1>
+    <div class="container">
+        <h1 class="text-center mb-5">Employee Management</h1>
         <div class="row">
-            <div class="col-md-6">
-                <h2>Create Employee</h2>
+            <div class="col-md-6 mb-4">
                 <div class="form-section">
+                    <h2>Create Employee</h2>
                     <form id="createEmployeeForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text" id="phone" name="phone" class="form-control" required>
+                            <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone" required>
                         </div>
                         <div class="form-group">
-                            <label for="address">Address</label>
-                            <input type="text" id="address" name="address" class="form-control" required>
+                            <input type="text" id="address" name="address" class="form-control" placeholder="Address" required>
                         </div>
                         <div class="form-group">
-                            <label for="position">Position</label>
-                            <input type="text" id="position" name="position" class="form-control" required>
+                            <input type="text" id="position" name="position" class="form-control" placeholder="Position" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Create</button>
                     </form>
                 </div>
             </div>
-            <div class="col-md-6">
-                <h2>Update Employee</h2>
+            <div class="col-md-6 mb-4">
                 <div class="form-section">
+                    <h2>Update Employee</h2>
                     <form id="updateEmployeeForm">
                         <input type="hidden" id="update_id" name="id">
                         <div class="form-group">
-                            <label for="update_name">Name</label>
-                            <input type="text" id="update_name" name="name" class="form-control" required>
+                            <input type="text" id="update_name" name="name" class="form-control" placeholder="Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="update_email">Email</label>
-                            <input type="email" id="update_email" name="email" class="form-control" required>
+                            <input type="email" id="update_email" name="email" class="form-control" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <label for="update_phone">Phone</label>
-                            <input type="text" id="update_phone" name="phone" class="form-control" required>
+                            <input type="text" id="update_phone" name="phone" class="form-control" placeholder="Phone" required>
                         </div>
                         <div class="form-group">
-                            <label for="update_address">Address</label>
-                            <input type="text" id="update_address" name="address" class="form-control" required>
+                            <input type="text" id="update_address" name="address" class="form-control" placeholder="Address" required>
                         </div>
                         <div class="form-group">
-                            <label for="update_position">Position</label>
-                            <input type="text" id="update_position" name="position" class="form-control" required>
+                            <input type="text" id="update_position" name="position" class="form-control" placeholder="Position" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Update</button>
                     </form>
@@ -100,7 +97,7 @@
         </div>
 
         <h2 class="mt-5">Employee List</h2>
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -123,7 +120,6 @@
         $(document).ready(function () {
             fetchemployee();
 
-            // Ambil semua employee
             function fetchemployee() {
                 axios.get('/api/employee')
                     .then(response => {
@@ -149,28 +145,26 @@
                         });
                     })
                     .catch(error => {
-                        toastr.error('Failed to fetch employee data');
+                        Swal.fire('Error', 'Failed to fetch employee data', 'error');
                         console.log(error);
                     });
             }
 
-            // Buat employee baru
             $('#createEmployeeForm').submit(function (event) {
                 event.preventDefault();
                 let formData = $(this).serialize();
                 axios.post('/api/employee', formData)
                     .then(response => {
-                        toastr.success(response.data.message);
+                        Swal.fire('Success', response.data.message, 'success');
                         fetchemployee();
                         $('#createEmployeeForm')[0].reset();
                     })
                     .catch(error => {
-                        toastr.error('Failed to create employee');
+                        Swal.fire('Error', 'Failed to create employee', 'error');
                         console.log(error);
                     });
             });
 
-            // Edit employee
             window.editEmployee = function (id) {
                 axios.get(`/api/employee/${id}`)
                     .then(response => {
@@ -183,44 +177,50 @@
                         $('#update_position').val(employee.position);
                     })
                     .catch(error => {
-                        toastr.error('Failed to fetch employee data');
+                        Swal.fire('Error', 'Failed to fetch employee data', 'error');
                         console.log(error);
                     });
             };
 
-            // Perbarui employee
             $('#updateEmployeeForm').submit(function (event) {
                 event.preventDefault();
                 let id = $('#update_id').val();
                 let formData = $(this).serialize();
                 axios.put(`/api/employee/${id}`, formData)
                     .then(response => {
-                        toastr.success(response.data.message);
+                        Swal.fire('Success', response.data.message, 'success');
                         fetchemployee();
                         $('#updateEmployeeForm')[0].reset();
                     })
                     .catch(error => {
-                        toastr.error('Failed to update employee');
+                        Swal.fire('Error', 'Failed to update employee', 'error');
                         console.log(error);
                     });
             });
 
-            // Hapus employee
             window.deleteEmployee = function (id) {
-                if (confirm('Apakah Anda yakin ingin menghapus employee ini?')) {
-                    axios.delete(`/api/employee/${id}`)
-                        .then(response => {
-                            toastr.success(response.data.message);
-                            fetchemployee();
-                        })
-                        .catch(error => {
-                            toastr.error('Failed to delete employee');
-                            console.log(error);
-                        });
-                }
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        axios.delete(`/api/employee/${id}`)
+                            .then(response => {
+                                Swal.fire('Deleted!', response.data.message, 'success');
+                                fetchemployee();
+                            })
+                            .catch(error => {
+                                Swal.fire('Error', 'Failed to delete employee', 'error');
+                                console.log(error);
+                            });
+                    }
+                });
             };
-
-            // Handle click to view employee detail
             $(document).on('click', '.employee-detail', function (e) {
                 e.preventDefault();
                 var employeeId = $(this).data('id');

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Employees Web by TreeUtomo</title>
-  <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="/assets/img/user4.png" />
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="/assets1/css/styles.min.css" />
   <style>
@@ -83,7 +83,7 @@
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="/assets/img/favicon.png" alt="IT5 Logo"/>
+            <img src="/assets/img/user4.png" alt="IT5 Logo"/>
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -114,7 +114,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link " href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  <img src="/assets1/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
+                  <img src="/assets/img/user3.png" alt="" width="35" height="35" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
@@ -141,7 +141,7 @@
         </div>
       </div>
       <div class="footer">
-        <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank"
+        <p class="mb-0 fs-4">Design and Developed by <a href="https://www.linkedin.com/in/te-imam-tree-utomo-65774a225/" target="_blank"
             class="pe-1 text-primary text-decoration-underline">TreeUtomo</a></p>
       </div>
     </div>
